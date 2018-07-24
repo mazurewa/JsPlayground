@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+    <script src="https://en.js.cx/test/libs.js"></script>
+</head>
+<body>
+	  <script src="readNumber.js"></script>
+	  <script>
+        let a = parseInt(prompt("a: ")); 
+        let b = parseInt(prompt("b: ")); 
+		alert("sum: " + (a+b));
+		
+		alert( 1.35.toFixed(1) ); // 1.4
+		alert( 6.35.toFixed(1) ); // 6.3
+		alert( (6.35 * 10).toFixed(1) ); // 6.4
+
+		let number = readNumber();
+        alert(`Read: ${number}`);
+		
+	</script>
+	  <script src="readNumberTest.js"></script>
+
+</body>
+</html>
