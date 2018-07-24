@@ -1,11 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
     <script src="https://en.js.cx/test/libs.js"></script>
 </head>
 <body>
 	  <script src="readNumber.js"></script>
+	  <script src="randomNumber.js"></script>
+	  <script src="randomInteger.js"></script>
 	  <script>
         let a = parseInt(prompt("a: ")); 
         let b = parseInt(prompt("b: ")); 
@@ -18,8 +20,12 @@
 		let number = readNumber();
         alert(`Read: ${number}`);
 		
+		let min = +prompt("min: ");
+        let max = +prompt("max: ");
+		alert('Random number between given min and max: ' + randomNumber(min, max));
+		alert('Random integer number between given min and max: ' + randomInteger(min, max));
+		
 	</script>
-	  <script src="readNumberTest.js"></script>
-
+	 <script src="readNumberTest.js"></script>
 </body>
 </html>
