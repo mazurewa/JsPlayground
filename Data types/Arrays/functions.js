@@ -28,23 +28,25 @@ function sumInput() {
 }
 
 function Calculator() {
-	this.operations = [{ operator: '+', func: (a,b) => +a + +b},
-	                   { operator: '-', func: (a,b) => a-b}
-					   ]; 
+	let operations = {'+': (a,b) => a+b,
+					  '-': (a,b) => a-b}; 
 	
 	this.calculate = function(str) {
 		let parts = str.split(' ');
-		for (let operation of this.operations) {
-			if (operation.operator == parts[1]) {
-				return operation.func(parts[0], parts[2]);
-			}
+		let a = +parts[0];
+		let operator = parts[1];
+		let b = +parts[2];
+		
+		if (a.isNaN || b.isNaN || !operations[operator]) {
+			return NaN;
 		}
-		return "No operation found";
+		
+		return operations[operator](a,b);		
 	};
 	
 	this.addMethod = function(name, func) {
-		this.operations.push({ operator: name, func: func });
-	};
+		operations[name] = func;
+		}
 }
 
 function getMaxSubSum(array) {
