@@ -66,7 +66,17 @@ function getAverageAge(arr) {
 	return arr.reduce((sum, current) => sum+current.age, 0)/arr.length;
 }
 
+function unique(arr) {
+	let distinctArray = [];
 
+	for(let item of arr) {
+		if (!distinctArray.includes(item)) {
+			distinctArray.push(item); 
+		}
+	}
+	
+	return distinctArray;
+}
 
 
 
