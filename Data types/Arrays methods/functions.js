@@ -25,3 +25,28 @@ function copySorted(arr) {
 	let sorted = arr.slice(0).sort();
 	return sorted;
 }
+
+function arrayMapping() {
+	let john = { name: "John", age: 25 };
+	let pete = { name: "Pete", age: 30 };
+	let mary = { name: "Mary", age: 28 };
+	
+	let users = [ john, pete, mary ];
+	
+	let names = users.map(user => user.name);
+
+	alert( names );
+}
+
+function anotherArrayMapping() {
+	let john = { name: "John", surname: "Smith", id: 1 };
+	let pete = { name: "Pete", surname: "Hunt", id: 2 };
+	let mary = { name: "Mary", surname: "Key", id: 3 };
+	
+	let users = [ john, pete, mary ];
+	
+	let usersMapped = users.map(item => ({id: item.id, fullName: item.name + " " + item.surname}));
+	
+	alert( usersMapped[0].id ) // 1
+	alert( usersMapped[0].fullName ) // John Smith
+}
