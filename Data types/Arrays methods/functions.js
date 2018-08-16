@@ -62,6 +62,10 @@ function shuffle(arr) {
   }
 }
 
+function getAverageAge(arr) {
+	return arr.reduce((sum, current) => sum+current.age, 0)/arr.length;
+}
+
 
 
 
