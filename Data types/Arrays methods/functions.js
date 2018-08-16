@@ -50,3 +50,37 @@ function anotherArrayMapping() {
 	alert( usersMapped[0].id ) // 1
 	alert( usersMapped[0].fullName ) // John Smith
 }
+
+function sortByName(arr) {
+	arr.sort((a,b) => (a.name > b.name));
+}
+
+function shuffle(arr) {
+	for (let i = arr.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
