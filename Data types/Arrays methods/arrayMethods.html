@@ -6,11 +6,20 @@
   <script src="functions.js"></script>
 </head>
 <body>
+	<script>
 	let arr = [5, 3, 8, 1];
 	filterRangeInPlace(arr, 1, 4); 
 	alert( arr );
 	
+	let arr1 = [5, 2, 1, -10, 8];
+	reverseSort(arr1);
+	alert( arr1 ); 
 	
+	let arr2 = ["HTML", "JavaScript", "CSS"];
+	let sorted = copySorted(arr2);
+	alert( sorted ); 			
+	alert( arr2 );
+	</script>
     <script src="tests.js"></script>
 </body>
 </html>

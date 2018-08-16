@@ -14,6 +14,14 @@ function filterRangeInPlace(arr, a, b) {
           arr.splice(i, 1);
           i--;
         }
-      }
-    
-    }
+      }   
+}
+
+function reverseSort(arr) {
+	arr = arr.sort((a,b) => b-a);
+}
+
+function copySorted(arr) {
+	let sorted = arr.slice(0).sort();
+	return sorted;
+}
