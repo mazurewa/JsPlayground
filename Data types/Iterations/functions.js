@@ -9,3 +9,16 @@ function sumSalaries(salaries) {
 function count(obj) {
 	return Object.keys(obj).length;
 }
+
+function topSalary(salaries){
+	let nameWithMaxSalary = null;
+	let max = 0;
+	for(let personInfo of Object.entries(salaries)) {
+		let [name, salary] = personInfo;
+		if(salary >= max) {
+			nameWithMaxSalary = name;
+			max = salary;
+		}
+	}
+	return nameWithMaxSalary;
+}
