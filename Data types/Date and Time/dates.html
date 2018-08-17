@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://en.js.cx/test/libs.js"></script>
+  <script src="functions.js"></script>
+</head>
+<body>
+	<script>
+	      function diffSubtract(date1, date2) {
+  return date2 - date1;
+}
+
+function diffGetTime(date1, date2) {
+  return date2.getTime() - date1.getTime();
+}
+
+function bench(f) {
+  let date1 = new Date(0);
+  let date2 = new Date();
+
+  let start = Date.now();
+  for (let i = 0; i < 100000; i++) f(date1, date2);
+  return Date.now() - start;
+}
+
+alert( 'Time of diffSubtract: ' + bench(diffSubtract) + 'ms' );
+alert( 'Time of diffGetTime: ' + bench(diffGetTime) + 'ms' );
+
+alert(new Date(2012, 1, 20, 3, 12, 0)); 
+
+let date = new Date(2012, 0, 3);  // 3 Jan 2012
+alert( getWeekDay(date) ); 
+
+let dateLocal = new Date(2012, 0, 3);
+alert( getLocalDay(dateLocal) ); 
+
+let date3 = new Date(2015, 0, 2);
+
+alert( getDateAgo(date3, 1) ); // 1, (1 Jan 2015)
+alert( getDateAgo(date3, 2) ); // 31, (31 Dec 2014)
+alert( getDateAgo(date3, 365) ); // 2, (2 Jan 2014)
+
+alert( getLastDayOfMonth(2012, 0) ); // 31
+alert( getLastDayOfMonth(2012, 1) ); // 29
+alert( getLastDayOfMonth(2013, 1) ); // 28
+
+alert( getSecondsToday() );
+alert( getSecondsToTomorrow() );
+
+alert( formatDate(new Date(new Date - 1)) ); // "right now"
+
+alert( formatDate(new Date(new Date - 30 * 1000)) ); // "30 sec. ago"
+
+alert( formatDate(new Date(new Date - 5 * 60 * 1000)) ); // "5 min. ago"
+
+// yesterday's date like 31.12.2016, 20:00
+alert( formatDate(new Date(new Date - 86400 * 1000)) );
+	</script>
+	<script src="tests.js"></script>
+</body>
+</html>
