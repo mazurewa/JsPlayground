@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="functions.js"></script>
+</head>
+<body>
+
+  <script>
+    
+    //printNumbersUsingSetInterval(2, 4);
+    //printNumbersUsingSetTimeout(2, 4);
+
+	
+let i = 0;
+let start = Date.now();
+
+let timerId = setInterval(count,0);
+
+function count() {
+
+  if (i == 1000000000) {
+    alert("Done in " + (Date.now() - start) + 'ms');
+	clearInterval(timerId);
+  }
+  // a piece of heavy job
+  for(let j = 0; j < 1000000; j++) {
+    i++;
+  }
+}
+
+count();
+
+  </script>
+
+</body>
+</html>
