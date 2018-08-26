@@ -18,6 +18,22 @@
 }
 
 sum.deferSum(1000)(1, 2); // shows 3 after 1 second
+
+let dictionary = Object.create(null, {
+	toString: {
+	value() {
+	return Object.keys(this).join();
+	}
+}} );
+
+dictionary.apple = "Apple";
+dictionary.__proto__ = "test"; 
+
+for(let key in dictionary) {
+  alert(key);
+}
+
+alert(dictionary); // "apple,__proto__"
 	</script>
 </body>
 </html>

@@ -8,4 +8,3 @@ Function.prototype.deferSum = function(ms) {
 		setTimeout(outerThis.apply(null, args), ms);
 	}
 }
-			
