@@ -41,7 +41,6 @@ freezer(2); // ignored
 setTimeout( () => freezer(3), 100); // ignored ( only 100 ms passed )
 setTimeout( () => freezer(4), 1100); // runs
 setTimeout( () => freezer(5), 1500); // ignored (less than 1000 ms from the last run)
-
   </script>
   <script src="tests.js"></script>
 
