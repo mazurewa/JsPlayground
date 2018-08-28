@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://en.js.cx/test/libs.js"></script>
+  <script src="functions.js"></script>
+</head>
+<body>
+	<script>
+		function f() {
+			alert("Hello!");
+			}
+			
+		f.defer(1000);
+		
+		function sum(a, b) {
+  alert( a + b );
+}
+
+sum.deferSum(1000)(1, 2); // shows 3 after 1 second
+
+let dictionary = Object.create(null, {
+	toString: {
+	value() {
+	return Object.keys(this).join();
+	}
+}} );
+
+dictionary.apple = "Apple";
+dictionary.__proto__ = "test"; 
+
+for(let key in dictionary) {
+  alert(key);
+}
+
+alert(dictionary); // "apple,__proto__"
+	</script>
+</body>
+</html>
