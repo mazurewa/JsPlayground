@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Console clock</title>
+  <script src="clock.js"></script>
+  <script src="entendedclock.js"></script>
+</head>
+<body>
+	<script>
+	 //let clock = new Clock({template: 'h:m:s'});
+	 //clock.start();
+	 
+	let extendedClock = new ExtendedClock({template: 'h:m:s', precision: 2000});
+	extendedClock.start(); 
+	extendedClock.stop(); 
+	
+	class Rabbit extends Object {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+let rabbit = new Rabbit("Rab");
+
+alert( rabbit.hasOwnProperty('name') ); // true
+	</script>
+</body>
+</html>
