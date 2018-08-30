@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div data-widget-name="menu">Choose the genre</div>
+  <script>
+    alert(document.getElementsByTagName('div')[0].dataset.widgetName);
+  </script>
+  
+  <a name="list">the list</a>
+<ul>
+  <li><a href="http://google.com">http://google.com</a></li>
+  <li><a href="/tutorial">/tutorial.html</a></li>
+  <li><a href="local/path">local/path</a></li>
+  <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+  <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+  <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+</ul>
+
+<script>
+  let aList = document.querySelector('ul').querySelectorAll('a');
+  for (let a of aList) {
+	if( a.getAttribute('href').includes('://') && !a.getAttribute('href').includes('http://internal.com')) {
+	     a.style.color = 'orange';
+	}
+  }
+</script>
+</body>
+</html>

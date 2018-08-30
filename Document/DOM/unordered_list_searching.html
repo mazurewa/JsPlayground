@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+  <ul>
+    <li>Animals
+      <ul>
+        <li>Mammals
+          <ul>
+            <li>Cows</li>
+            <li>Donkeys</li>
+            <li>Dogs</li>
+            <li>Tigers</li>
+          </ul>
+        </li>
+        <li>Other
+          <ul>
+            <li>Snakes</li>
+            <li>Birds</li>
+            <li>Lizards</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Fishes
+      <ul>
+        <li>Aquarium
+          <ul>
+            <li>Guppy</li>
+            <li>Angelfish</li>
+          </ul>
+        </li>
+        <li>Sea
+          <ul>
+            <li>Sea trout</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+	for (let li of document.getElementsByTagName('li')) {	   
+	   alert(li.firstChild.wholeText + ': ' + li.querySelectorAll('li').length);
+	   }
+	   
+	  console.log(document.body);
+console.dir(document.body);
+  </script>
+
+<div id="elem">A blinking element</div>
+
+<script>
+  setInterval(() => elem.hidden = !elem.hidden, 1000);
+</script>
+</body>
+</html>
