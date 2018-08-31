@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<div id="container"></div>
+<script>
+ let data = {
+  "Fish": {
+    "trout": {},
+    "salmon": {}
+  },
+
+  "Tree": {
+    "Huge": {
+      "sequoia": {},
+      "oak": {}
+    },
+    "Flowering": {
+      "redbud": {},
+      "magnolia": {}
+    }
+  }
+};
+
+function createTree(container, data) {	
+	container.append(createChildren(data));
+}
+
+function createChildren(data) {
+	if (!Object.keys(data).length) return;
+
+	let ul = document.createElement('ul');
+
+	for (let key in data) {
+	let li = document.createElement('li');
+	li.textContent = key;
+	let children = createChildren(data[key]);
+	if(children) {
+		li.append(children);
+	}
+	ul.append(li);
+	}
+	return ul;
+}
+
+let container = document.getElementById('container');
+createTree(container, data);
+
+ </script> 
+ 
+</body>
+</html>
